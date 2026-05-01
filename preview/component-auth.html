@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0d1117; padding: 14px; font-family: 'Inter', sans-serif; }
+  .panel { background: hsl(220 15% 16% / 0.4); border: 1px solid #262d38; border-radius: 16px; padding: 14px; max-width: 360px; }
+  .header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+  .header-left { display: flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 500; color: #ece9e0; }
+  .desc { font-size: 11px; color: #787e8a; margin-bottom: 10px; line-height: 1.4; }
+  .input-row { display: flex; gap: 7px; }
+  .input-wrap { position: relative; flex: 1; }
+  .mail-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: #787e8a; }
+  .input { width: 100%; background: hsl(220 20% 6%); border: 1px solid #262d38; border-radius: 12px; padding: 9px 12px 9px 34px; font-size: 13px; color: #ece9e0; outline: none; box-sizing: border-box; }
+  .btn-send { padding: 9px 14px; border-radius: 12px; background: hsl(38 90% 55%); color: #0d1117; font-size: 13px; font-weight: 500; border: none; cursor: pointer; white-space: nowrap; }
+  .hint { font-size: 10px; color: #787e8a; margin-top: 8px; line-height: 1.4; }
+  svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+</style>
+</head>
+<body>
+  <div class="panel">
+    <div class="header">
+      <div class="header-left">
+        <svg style="stroke:hsl(38 90% 55%)"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+        Войдите, чтобы синхронизировать базу
+      </div>
+    </div>
+    <div class="desc">История оценок и watchlist будут храниться в Supabase и подтягиваться на любом устройстве после входа.</div>
+    <div class="input-row">
+      <div class="input-wrap">
+        <svg class="mail-icon"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+        <input class="input" placeholder="you@example.com" type="email">
+      </div>
+      <button class="btn-send">Войти</button>
+    </div>
+    <div class="hint">Пришлем magic link на email. Для этого в Supabase Auth должен быть включен Email provider.</div>
+  </div>
+</body>
+</html>
