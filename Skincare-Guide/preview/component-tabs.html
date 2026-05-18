@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#1A2E28; padding:16px; font-family:'Manrope',sans-serif; }
+.label { font-size:9px; font-weight:700; color:#4A7C6F; letter-spacing:1.2px; text-transform:uppercase; margin-bottom:8px; }
+.tabs { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
+.tab { padding:8px 16px; border-radius:30px; font-size:12px; font-weight:600; cursor:default; }
+.tab.active  { background:#4A7C6F; color:#fff; }
+.tab.default { background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.45); }
+.badge-row { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
+.badge { display:inline-block; background:rgba(123,181,164,0.2); border:1px solid rgba(123,181,164,0.4); color:#7BB5A4; font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; padding:5px 14px; border-radius:40px; }
+.chip-row { display:flex; gap:6px; flex-wrap:wrap; }
+.chip { background:#EDF3F0; color:#3D5A52; font-size:11px; font-weight:600; padding:4px 10px; border-radius:20px; }
+.chip.warn { background:#FEF2EA; color:#C8855A; }
+.chip.ok { background:#EAF5F0; color:#3A7A5E; }
+</style></head>
+<body>
+<div class="label">Nav Tabs</div>
+<div class="tabs">
+  <div class="tab active">Средства</div>
+  <div class="tab default">Алгоритм</div>
+  <div class="tab default">Правила</div>
+  <div class="tab default">Риски</div>
+</div>
+<div class="label">Badge</div>
+<div class="badge-row">
+  <div class="badge">Уход-протокол · 2025</div>
+</div>
+<div class="label" style="color:#4A7C6F;margin-top:4px">Chips</div>
+<div class="chip-row">
+  <div class="chip">2–4 капли</div>
+  <div class="chip">сухая кожа</div>
+  <div class="chip warn">⚠️ окисление</div>
+  <div class="chip ok">✔ рекомендован</div>
+</div>
+</body></html>

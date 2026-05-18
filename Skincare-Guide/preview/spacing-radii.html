@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#EDF3F0; padding:16px; font-family:'Manrope',sans-serif; }
+.row { display:flex; gap:10px; align-items:flex-end; margin-bottom:14px; }
+.label { font-size:9px; font-weight:700; color:#6B8E84; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px; }
+.shape { background:#4A7C6F; display:flex; align-items:center; justify-content:center; color:#fff; font-size:9px; font-weight:700; flex-direction:column; gap:2px; }
+.shadow-row { display:flex; gap:12px; }
+.shadow-box { background:#fff; display:flex; align-items:center; justify-content:center; border-radius:12px; width:90px; height:50px; flex-direction:column; gap:2px; }
+.shadow-box .n { font-size:9px; font-weight:700; color:#3D5A52; }
+.shadow-box .v { font-size:8px; color:#6B8E84; }
+</style></head>
+<body>
+<div class="label">Border Radii</div>
+<div class="row">
+  <div>
+    <div class="shape" style="width:36px;height:36px;border-radius:12px"><span>sm</span><span style="opacity:.7">12</span></div>
+  </div>
+  <div>
+    <div class="shape" style="width:42px;height:42px;border-radius:14px"><span>md</span><span style="opacity:.7">14</span></div>
+  </div>
+  <div>
+    <div class="shape" style="width:54px;height:54px;border-radius:20px"><span>lg</span><span style="opacity:.7">20</span></div>
+  </div>
+  <div>
+    <div class="shape" style="width:64px;height:28px;border-radius:40px"><span>pill</span><span style="opacity:.7">40</span></div>
+  </div>
+  <div>
+    <div class="shape" style="width:42px;height:42px;border-radius:9999px"><span>full</span></div>
+  </div>
+</div>
+<div class="label">Shadows</div>
+<div class="shadow-row">
+  <div class="shadow-box" style="box-shadow:0 1px 3px rgba(0,0,0,0.06)"><div class="n">card</div><div class="v">0 1px 3px · 6%</div></div>
+  <div class="shadow-box" style="box-shadow:0 2px 8px rgba(0,0,0,0.09)"><div class="n">mid</div><div class="v">0 2px 8px · 9%</div></div>
+  <div class="shadow-box" style="background:#1A2E28;"><div class="n" style="color:#7BB5A4">dark</div><div class="v" style="color:#4A7C6F">no shadow</div></div>
+</div>
+</body></html>

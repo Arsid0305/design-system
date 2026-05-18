@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#EDF3F0; font-family:'Manrope',sans-serif; padding:16px; }
+.row { display:flex; gap:8px; margin-bottom:10px; }
+.swatch { flex:1; border-radius:10px; display:flex; flex-direction:column; justify-content:flex-end; padding:8px; min-height:72px; }
+.swatch .name { font-size:10px; font-weight:700; }
+.swatch .hex  { font-size:9px; font-weight:600; opacity:0.7; margin-top:2px; }
+.light .name, .light .hex { color:#1A2E28; }
+.dark .name, .dark .hex  { color:rgba(255,255,255,0.85); }
+.section-label { font-size:9px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; color:#6B8E84; margin-bottom:6px; }
+</style></head>
+<body>
+<div class="section-label">Sage Scale</div>
+<div class="row">
+  <div class="swatch dark" style="background:#1A2E28"><div class="name">dark</div><div class="hex">#1A2E28</div></div>
+  <div class="swatch dark" style="background:#3D5A52"><div class="name">mid</div><div class="hex">#3D5A52</div></div>
+  <div class="swatch dark" style="background:#4A7C6F"><div class="name">sage</div><div class="hex">#4A7C6F</div></div>
+  <div class="swatch dark" style="background:#6B8E84"><div class="name">soft</div><div class="hex">#6B8E84</div></div>
+  <div class="swatch light" style="background:#7BB5A4"><div class="name">sage-light</div><div class="hex">#7BB5A4</div></div>
+  <div class="swatch light" style="background:#C8DDD7"><div class="name">sage-dim</div><div class="hex">#C8DDD7</div></div>
+  <div class="swatch light" style="background:#EDF3F0"><div class="name">sage-bg</div><div class="hex">#EDF3F0</div></div>
+</div>
+<div class="section-label" style="margin-top:4px">Warm &amp; Neutral</div>
+<div class="row">
+  <div class="swatch dark" style="background:#C8855A"><div class="name">warm</div><div class="hex">#C8855A</div></div>
+  <div class="swatch light" style="background:#FEF2EA"><div class="name">warm-bg</div><div class="hex">#FEF2EA</div></div>
+  <div class="swatch light" style="background:#FAF6EF"><div class="name">cream</div><div class="hex">#FAF6EF</div></div>
+  <div class="swatch light" style="background:#ffffff; border:1px solid #EDF3F0"><div class="name">white</div><div class="hex">#FFFFFF</div></div>
+</div>
+</body></html>

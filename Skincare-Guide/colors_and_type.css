@@ -1,0 +1,178 @@
+/*
+ * Уход-протокол Design System
+ * colors_and_type.css
+ * ─────────────────────────────────────────────
+ * Base color + typography tokens, semantic vars.
+ * Fonts: Unbounded (display), Manrope (body)
+ * Load via Google Fonts:
+ *   https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Manrope:wght@400;500;600;700&display=swap
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Manrope:wght@400;500;600;700&display=swap');
+
+:root {
+
+  /* ── BRAND PALETTE ────────────────────────────── */
+  --sage:          #4A7C6F;   /* primary green */
+  --sage-light:    #7BB5A4;   /* lighter sage, accent text on dark */
+  --sage-dim:      #C8DDD7;   /* muted sage, borders */
+  --sage-bg:       #EDF3F0;   /* surface tint, chip bg */
+  --cream:         #FAF6EF;   /* warm off-white, alt bg */
+  --warm:          #C8855A;   /* warning / stop orange */
+  --warm-bg:       #FEF2EA;   /* warning surface */
+  --dark:          #1A2E28;   /* near-black dark green — header, key card bg */
+  --mid:           #3D5A52;   /* mid-tone green, body text on light */
+  --soft:          #6B8E84;   /* muted text, metadata */
+
+  /* ── SEMANTIC COLOR TOKENS ────────────────────── */
+  --color-bg:           var(--sage-bg);
+  --color-surface:      #ffffff;
+  --color-surface-alt:  var(--cream);
+  --color-surface-dark: var(--dark);
+
+  --color-text-primary:   var(--dark);
+  --color-text-secondary: var(--mid);
+  --color-text-muted:     var(--soft);
+  --color-text-on-dark:   #ffffff;
+  --color-text-accent:    var(--sage);
+  --color-text-accent-on-dark: var(--sage-light);
+
+  --color-warning:        var(--warm);
+  --color-warning-bg:     var(--warm-bg);
+  --color-success:        #3A7A5E;
+  --color-success-bg:     #EAF5F0;
+
+  --color-border:         rgba(26, 46, 40, 0.08);
+  --color-border-dark:    rgba(255, 255, 255, 0.06);
+
+  /* ── TYPOGRAPHY ───────────────────────────────── */
+  --font-display: 'Unbounded', sans-serif;   /* headings, product names, labels */
+  --font-body:    'Manrope', sans-serif;      /* all body copy, chips, UI */
+
+  /* Scale */
+  --text-xs:   10px;
+  --text-sm:   11px;
+  --text-base: 13px;
+  --text-md:   14px;
+  --text-lg:   16px;
+  --text-xl:   20px;
+  --text-2xl:  26px;
+
+  /* Weight */
+  --weight-regular:   400;
+  --weight-medium:    500;
+  --weight-semibold:  600;
+  --weight-bold:      700;
+  --weight-black:     900;
+
+  /* Line heights */
+  --leading-tight:   1.15;
+  --leading-snug:    1.3;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.65;
+
+  /* Letter spacing */
+  --tracking-wide:   1px;
+  --tracking-wider:  1.5px;
+
+  /* ── SPACING ──────────────────────────────────── */
+  --space-1:  4px;
+  --space-2:  6px;
+  --space-3:  8px;
+  --space-4: 10px;
+  --space-5: 12px;
+  --space-6: 14px;
+  --space-7: 16px;
+  --space-8: 18px;
+  --space-9: 20px;
+  --space-10: 28px;
+  --space-11: 32px;
+  --space-12: 52px;
+
+  /* ── RADII ────────────────────────────────────── */
+  --radius-sm:   12px;
+  --radius-md:   14px;
+  --radius-lg:   20px;
+  --radius-pill: 40px;
+  --radius-full: 9999px;
+
+  /* ── SHADOWS ──────────────────────────────────── */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-mid:  0 2px 8px rgba(0, 0, 0, 0.09);
+
+  /* ── TRANSITIONS ──────────────────────────────── */
+  --transition-fast: 0.2s ease;
+}
+
+/* ── SEMANTIC ELEMENT STYLES ──────────────────────── */
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-primary);
+  background: var(--color-bg);
+  line-height: var(--leading-normal);
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-tight);
+  color: var(--color-text-on-dark);
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-snug);
+  color: var(--color-text-primary);
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-snug);
+  color: var(--color-text-primary);
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-text-accent);
+}
+
+.caption {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-muted);
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(123, 181, 164, 0.2);
+  border: 1px solid rgba(123, 181, 164, 0.4);
+  color: var(--sage-light);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+}
