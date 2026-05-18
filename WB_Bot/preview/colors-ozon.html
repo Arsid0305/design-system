@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif}
+body{background:#fff;padding:20px;display:flex;flex-direction:column;gap:12px}
+.row{display:flex;gap:8px;align-items:stretch}
+.swatch{flex:1;border-radius:10px;padding:14px 12px;display:flex;flex-direction:column;gap:4px;min-height:80px;justify-content:flex-end}
+.swatch-label{font-size:11px;font-weight:700;color:rgba(255,255,255,0.75);text-transform:uppercase;letter-spacing:.06em}
+.swatch-value{font-size:12px;font-weight:600;color:rgba(255,255,255,0.9)}
+.swatch-dark .swatch-label{color:rgba(0,0,0,0.4)}
+.swatch-dark .swatch-value{color:rgba(0,0,0,0.55)}
+.title{font-size:11px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+</style></head><body>
+<div class="title">Ozon Platform</div>
+<div class="row">
+  <div class="swatch" style="background:linear-gradient(135deg,#005BFF,#0041CC);flex:2">
+    <div class="swatch-label">Primary Gradient</div>
+    <div class="swatch-value">#005BFF → #0041CC</div>
+  </div>
+  <div class="swatch" style="background:#005BFF">
+    <div class="swatch-label">Accent</div>
+    <div class="swatch-value">#005BFF</div>
+  </div>
+  <div class="swatch" style="background:#0041CC">
+    <div class="swatch-label">Accent Dark</div>
+    <div class="swatch-value">#0041CC</div>
+  </div>
+</div>
+<div class="row">
+  <div class="swatch swatch-dark" style="background:rgba(0,91,255,0.06);border:1px solid rgba(0,91,255,0.15)">
+    <div class="swatch-label">Accent Tint</div>
+    <div class="swatch-value">rgba(0,91,255,.06)</div>
+  </div>
+  <div class="swatch swatch-dark" style="background:rgba(0,91,255,0.12);border:1px solid rgba(0,91,255,0.2)">
+    <div class="swatch-label">Accent Shadow</div>
+    <div class="swatch-value">rgba(0,91,255,.12)</div>
+  </div>
+  <div class="swatch" style="background:#10A37F">
+    <div class="swatch-label">AI / GPT</div>
+    <div class="swatch-value">#10A37F</div>
+  </div>
+</div>
+</body></html>

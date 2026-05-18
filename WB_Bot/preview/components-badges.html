@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif}
+body{background:#fff;padding:20px;display:flex;flex-direction:column;gap:14px}
+.title{font-size:11px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.badge{display:inline-block;padding:5px 14px;border-radius:20px;font-size:13px;font-weight:600;color:#fff}
+.chip{display:inline-block;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;display:flex;align-items:center;gap:4px;width:fit-content}
+</style></head><body>
+<div>
+  <div class="title">Platform Badges</div>
+  <div class="row">
+    <span class="badge" style="background:linear-gradient(135deg,#a500ff,#7b00ff)">WB</span>
+    <span class="badge" style="background:linear-gradient(135deg,#005BFF,#0041CC)">OZON</span>
+    <span class="badge" style="background:#f0f1f4;color:#666">Вручную</span>
+  </div>
+</div>
+<div>
+  <div class="title">Status Chips</div>
+  <div class="row">
+    <div class="chip" style="background:rgba(52,199,89,0.1);color:#34C759">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Отвечено
+    </div>
+    <div class="chip" style="background:#FFF8E1;color:#7A5F00;border:1px solid rgba(255,184,0,0.2)">⚠️ Предупреждение</div>
+    <div class="chip" style="background:#FFF0F0;color:#c0392b;border:1px solid #FFD0D0">Ошибка API</div>
+  </div>
+</div>
+<div>
+  <div class="title">Rating · Sentiment Labels</div>
+  <div class="row">
+    <span style="font-size:14px;color:#34C759;font-weight:600">Положительный</span>
+    <span style="font-size:14px;color:#FF9500;font-weight:600">Нейтральный</span>
+    <span style="font-size:14px;color:#FF3B30;font-weight:600">Отрицательный</span>
+  </div>
+</div>
+<div>
+  <div class="title">Learning / Feedback Badge</div>
+  <div class="row">
+    <span style="background:rgba(255,255,255,0.2);color:#fff;border-radius:20px;padding:3px 12px;font-size:12px;background-color:#a500ff">🎓 42</span>
+    <span style="background:rgba(255,255,255,0.2);color:#a500ff;border-radius:20px;padding:3px 12px;font-size:12px;border:1px solid rgba(165,0,255,0.2)">🎓 42 ответов обучено</span>
+  </div>
+</div>
+</body></html>

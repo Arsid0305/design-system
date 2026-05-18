@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif}
+body{background:#f5f6f8;padding:20px;display:flex;flex-direction:column;gap:12px}
+.title{font-size:11px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.inp{width:100%;padding:12px 14px;border:1.5px solid #d9dbe0;border-radius:10px;font-size:15px;color:#1a1a1a;background:#fafafa;font-family:inherit}
+.inp-focus{width:100%;padding:12px 14px;border:1.5px solid #a500ff;border-radius:10px;font-size:15px;color:#1a1a1a;background:#fafafa;box-shadow:0 0 0 3px rgba(165,0,255,0.06);font-family:inherit;outline:none}
+.lbl{display:block;font-size:13px;font-weight:600;color:#444;margin-bottom:6px}
+.ta{width:100%;padding:12px 14px;border:1.5px solid #d9dbe0;border-radius:10px;font-size:15px;color:#1a1a1a;background:#fafafa;font-family:inherit;height:80px;resize:none;line-height:1.6}
+.hint{font-size:12px;color:#999;margin-top:4px}
+</style></head><body>
+<div>
+  <div class="title">Text Input</div>
+  <label class="lbl">Название бренда <span style="color:#a500ff">*</span></label>
+  <input class="inp" placeholder="Organic Lab" value="">
+</div>
+<div>
+  <div class="title">Input — Focused</div>
+  <label class="lbl">Подпись</label>
+  <input class="inp-focus" value="С уважением, команда Arols">
+</div>
+<div>
+  <div class="title">Textarea</div>
+  <label class="lbl">Доп. инструкции</label>
+  <textarea class="ta" placeholder="Например: при браке — предлагать замену..."></textarea>
+  <div class="hint">Лимит: 1000 символов &nbsp;·&nbsp; <span style="color:#999">0 / 1000</span></div>
+</div>
+</body></html>

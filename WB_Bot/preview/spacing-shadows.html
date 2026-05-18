@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif}
+body{background:#f5f6f8;padding:20px;display:flex;flex-direction:column;gap:12px}
+.title{font-size:11px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.card-demo{background:#fff;border-radius:14px;border:1px solid #e6e8ec;padding:18px;font-size:14px;color:#555}
+.card-hover{background:#fff;border-radius:14px;border:1px solid #e6e8ec;padding:18px;font-size:14px;color:#555;box-shadow:0 12px 32px rgba(165,0,255,0.12);transform:translateY(-1px)}
+.row{display:flex;gap:10px}
+</style></head><body>
+<div class="title">Shadow System</div>
+<div class="row">
+  <div style="flex:1">
+    <div style="font-size:11px;color:#bbb;margin-bottom:6px;font-weight:600">Resting · 0 8px 24px rgba(0,0,0,.05)</div>
+    <div class="card-demo">Card resting state</div>
+  </div>
+  <div style="flex:1">
+    <div style="font-size:11px;color:#bbb;margin-bottom:6px;font-weight:600">Hover WB · 0 12px 32px rgba(165,0,255,.12)</div>
+    <div class="card-hover">Card hovered (WB)</div>
+  </div>
+</div>
+<div class="row">
+  <div style="flex:1">
+    <div style="font-size:11px;color:#bbb;margin-bottom:6px;font-weight:600">Hover Ozon · 0 12px 32px rgba(0,91,255,.12)</div>
+    <div class="card-demo" style="box-shadow:0 12px 32px rgba(0,91,255,0.12);transform:translateY(-1px)">Card hovered (Ozon)</div>
+  </div>
+  <div style="flex:1">
+    <div style="font-size:11px;color:#bbb;margin-bottom:6px;font-weight:600">Focus ring · 0 0 0 3px accentBg</div>
+    <input style="width:100%;padding:12px 14px;border:1.5px solid #a500ff;border-radius:10px;font-size:15px;background:#fafafa;box-shadow:0 0 0 3px rgba(165,0,255,0.06);outline:none" value="Input focused" readonly>
+  </div>
+</div>
+</body></html>
