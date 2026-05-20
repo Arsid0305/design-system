@@ -1,4 +1,4 @@
-# retired — dev branch removed, merges go directly to main via automerge.yml
+# deleted — was retired noop, removing to avoid confusion
 on:
   push:
     branches:
