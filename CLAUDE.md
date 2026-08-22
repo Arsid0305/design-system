@@ -1,4 +1,9 @@
-# Контекст проекта для Claude
+# Claude Adapter — design-system
+
+> Тонкий адаптер для Claude. Универсальные правила экосистемы — в `docs/rules/core/*.md` (синкается из AI_OS).
+> Читай этот файл, `docs/rules/README.md` и `tasks/lessons.md` в начале каждого чата.
+
+---
 
 ## ⛔ ГЛАВНОЕ ПРАВИЛО
 
@@ -7,23 +12,32 @@
 
 **Исключение:** баг внутри уже согласованного скоупа задачи — чини сам, сообщи после.
 
-> Правило: Читай этот файл и `tasks/lessons.md` в начале каждого чата. В конце чата — обновляй «Открытые баги» и `tasks/lessons.md`.
+---
+
+## LLM_Wiki — контекст экосистемы
+
+В начале каждой сессии прочитать из `arsid0305/llm_wiki` (main):
+- `wiki/lessons.md`, `wiki/decisions.md` — кросс-проектные уроки и решения
+- `wiki/rules-architecture.md` — canon rules-архитектуры (если ещё не читал)
 
 ---
 
-## LLM_Wiki — Общий контекст экосистемы
+## Каноны (rules как атомы)
 
-В начале каждой сессии прочитать из репо `arsid0305/llm_wiki` (ветка `main`):
-- `wiki/lessons.md` — кросс-проектные уроки
-- `wiki/decisions.md` — ключевые архитектурные решения
+Универсальные правила — в `docs/rules/core/*.md` (SSOT в AI_OS, синкается автоматически). Читать нужное по имени:
 
-Даёт контекст по всем проектам без объяснений от пользователя.
+- Начало / конец сессии — [`docs/rules/core/session-lifecycle.md`](docs/rules/core/session-lifecycle.md)
+- Стиль общения — [`docs/rules/core/communication-style.md`](docs/rules/core/communication-style.md)
+- Git flow, запрет флагов, правила редактирования — [`docs/rules/core/git-flow.md`](docs/rules/core/git-flow.md)
+- GitHub anti-abuse — [`docs/rules/core/github-anti-abuse.md`](docs/rules/core/github-anti-abuse.md)
+- Критерии SMALL / BIG — [`docs/rules/core/task-classification.md`](docs/rules/core/task-classification.md)
+- Принципы работы с кодом — [`docs/rules/core/code-principles.md`](docs/rules/core/code-principles.md)
+- Subagents (worktree, JSON-schema контракты, выбор модели) — [`docs/rules/core/subagents.md`](docs/rules/core/subagents.md)
+- Audit-триггер — [`docs/rules/core/audit-trigger.md`](docs/rules/core/audit-trigger.md)
 
----
+**Специфика design-system** (scoped): [`docs/rules/scoped/design-system-specific.md`](docs/rules/scoped/design-system-specific.md) — review превью, CSS-токены, безопасность HTML, структура preview/.
 
-## Стиль общения Claude
-
-Канон — `AI_OS/SYSTEM.md §4` + `AI_OS/CLAUDE.md` («Правила краткости»).
+Архитектура rules и правила синка — [`docs/rules/README.md`](docs/rules/README.md).
 
 ---
 
@@ -31,7 +45,6 @@
 
 `github.com/Arsid0305/TEMPLATE` содержит шаблоны для всех проектов.
 
-Claude читает его через git:
 ```bash
 git clone https://github.com/Arsid0305/TEMPLATE /tmp/arsid-template
 ```
@@ -40,186 +53,24 @@ git clone https://github.com/Arsid0305/TEMPLATE /tmp/arsid-template
 
 ---
 
-## BIG vs SMALL — определить до начала
-
-Спросить пользователя: это большая или маленькая задача?
-
-**BIG** (новая папка проекта, рефакторинг превью, новая система токенов):
-- Написать план в `tasks/todo.md` с чекбоксами
-- Провести review по разделам ниже
-- Пауза после каждого раздела — ждать фидбек
-- Не писать код до финального «делай»
-
-**SMALL** (добавить компонент, поправить цвет, мелкое изменение):
-- Краткий план (2-3 строки), подождать «делай»
-
----
-
-## Перед написанием кода — Review
-
-**Не начинать реализацию до завершения review и подтверждения пользователя.**
-
-Для каждой найденной проблемы:
-1. Описание проблемы
-2. Почему важно
-3. 2-3 варианта решения
-4. Усилие / риск / импакт для каждого
-5. Рекомендация + причина
-
-### Архитектура дизайна
-- Консистентность токенов между проектами
-- Правильность наименования файлов превью
-- Актуальность превью (соответствует ли реальности проекта)
-
-### Качество HTML-превью
-- Правильность CSS-токенов (цвета, отступы, шрифты)
-- Читаемость и соответствие названий
-
----
-
-## Task Management
-
-- `tasks/todo.md` — план с чекбоксами до начала любой BIG задачи.
-- `tasks/lessons.md` — паттерны ошибок. Фиксировать после каждой правки от пользователя.
-
-Формат записи в `tasks/lessons.md`:
-```
-## [дата] [краткое название ситуации]
-**Что произошло:** ...
-**Правило:** ...
-```
-
----
-
-## Верификация перед Done
-
-Никогда не говорить «готово» без:
-- Открыть превью в браузере и проверить визуально
-- Сравнения до/после если релевантно
-- Вопроса себе: «Одобрил бы это Senior Designer в проде?»
-
----
-
-## Subagents
-
-Использовать для:
-- Исследования и анализа кода (не засорять основной контекст)
-- Параллельных независимых задач
-
-Один subagent — одна фокусная задача.
-
----
-
-## Выбор модели для subagents
-
-При запуске subagent всегда явно указывать `model`:
-
-| Модель  | Когда использовать |
-|---------|-------------------|
-| `haiku` | Поиск файлов, чтение кода, grep, простые запросы — быстро и дёшево |
-| `sonnet` | Написание кода, отладка, стандартные задачи — баланс качества и цены |
-| `opus`  | Архитектура, сложный анализ, планирование BIG-задач — максимальное качество |
-
-По умолчанию — `sonnet`.
-
----
-
-## Self-Improvement Loop
-
-После каждой правки от пользователя:
-1. Понять паттерн ошибки
-2. Записать правило в `tasks/lessons.md`
-3. Читать `tasks/lessons.md` в начале следующего чата
-
----
-
-## Core Principles
-
-- **Простота:** минимальный импакт, трогать только необходимое
-- **Корень проблемы:** не хакать, искать причину
-- **Явность над хитростью:** явные решения лучше умных
-- **Элегантность:** для нетривиальных изменений — спросить себя «есть ли более элегантный способ?»
-
----
-
-## Безопасность — чеклист перед первым деплоем
-
-Claude инициирует проверку сам перед первым деплоем в `main`. Молча не пропускать.
-
-### Безопасность HTML
-- [ ] Нет `innerHTML` без санитизации пользовательских данных
-- [ ] Нет чувствительных данных захардкоженных в JS
-
-### CI/CD
-- [ ] В каждом workflow: минимальные права (`contents: read`)
-
----
-
 ## Инфраструктура
 
 - Репо: github.com/Arsid0305/design-system
 - Тип: дизайн-система, статические HTML-превью компонентов
 - Подключается к проектам как git submodule
-
----
-
-## Структура
-
-```
-[project-name]/
-  preview/
-    component-cards.html
-    component-buttons.html
-    component-chips.html
-    component-nav.html
-    component-chat.html
-    component-auth.html
-    colors-base.html
-    type-display.html
-    shadows-glow.html
-    spacing-tokens.html
-```
-
-Перед любым UI-изменением в проектах — открыть нужный файл превью из `[submodule]/[PROJECT]/preview/`. Не выдумывать UI с нуля.
-
----
-
-## Стек
-
-- HTML + CSS + JavaScript
-- Используется как git submodule в других проектах
-- Node.js: не требуется
-
----
+- Стек: HTML + CSS + JavaScript (без фреймворков, без Node.js)
 
 ## Среда Claude
 
-- Node.js: не требуется
-- npm: не требуется
+- Node.js / npm: не требуется
 - Supabase CLI: не используется
-
----
 
 ## Рабочий процесс
 
-Схема: `ветка claude/...` → PR в `main` → автомерж через GitHub API
-
-1. Claude пишет код → пушит в ветку `claude/...`
-2. Создаёт PR в `main`
-3. `automerge.yml` мержит PR через GitHub API (squash) автоматически
-
-> Требует: Settings → General → «Allow auto-merge» включён в репо
-
----
-
-## Правила Git
-
-- Разрабатывать на ветке `claude/...`, никогда не пушить напрямую в `main`
-- Никогда не использовать `--no-verify`, `--force`, `--no-gpg-sign`
-- Синхронизация с основной: `git pull origin main`
+Ветка `claude/...` → PR в `main` → `automerge.yml` через GitHub API (squash). Никогда не пушить в `main` напрямую.
 
 ---
 
 ## Открытые баги
 
-_(пусто)
+_(пусто)_
