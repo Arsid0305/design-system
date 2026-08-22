@@ -55,10 +55,13 @@ git clone https://github.com/Arsid0305/TEMPLATE /tmp/arsid-template
 
 ## Инфраструктура
 
+_Проверено: 2026-08-19._
+
 - Репо: github.com/Arsid0305/design-system
 - Тип: дизайн-система, статические HTML-превью компонентов
-- Подключается к проектам как git submodule
+- Подключается к проектам как git submodule (`kino-design-system/` в Kino-app, аналогично в других)
 - Стек: HTML + CSS + JavaScript (без фреймворков, без Node.js)
+- CI/CD: `automerge.yml`. ⚠️ Учитывать T&S-флаг аккаунта `Arsid0305` — мерж только вручную кнопкой в веб-интерфейсе (см. `docs/rules/core/github-anti-abuse.md`).
 
 ## Среда Claude
 
