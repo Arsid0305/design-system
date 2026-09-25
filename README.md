@@ -45,4 +45,4 @@
 ## Инфраструктура
 
 - Репо: `github.com/Arsid0305/design-system`
-- CI: `automerge.yml` — автомерж `claude/*` PR через GitHub API
+- CI: нет. Автомержа нет, PR мержит владелица кнопкой
