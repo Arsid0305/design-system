@@ -61,7 +61,7 @@ _Проверено: 2026-08-19._
 - Тип: дизайн-система, статические HTML-превью компонентов
 - Подключается к проектам как git submodule (`kino-design-system/` в Kino-app, аналогично в других)
 - Стек: HTML + CSS + JavaScript (без фреймворков, без Node.js)
-- CI/CD: `automerge.yml`. ⚠️ Учитывать T&S-флаг аккаунта `Arsid0305` — мерж только вручную кнопкой в веб-интерфейсе (см. `docs/rules/core/github-anti-abuse.md`).
+- CI/CD: нет. Автомержа нет (удалён 2026-09-25) — PR мержит владелица кнопкой, мерж через API запрещён (`docs/rules/core/github-anti-abuse.md`).
 
 ## Среда Claude
 
@@ -70,7 +70,7 @@ _Проверено: 2026-08-19._
 
 ## Рабочий процесс
 
-Ветка `claude/...` → PR в `main` → `automerge.yml` через GitHub API (squash). Никогда не пушить в `main` напрямую.
+Ветка `claude/...` → PR в `main` (не draft). Автомержа нет (удалён 2026-09-25) — PR мержит владелица кнопкой, мерж через API запрещён (`docs/rules/core/github-anti-abuse.md`). Никогда не пушить в `main` напрямую.
 
 ---
 
