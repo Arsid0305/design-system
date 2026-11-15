@@ -1,7 +1,7 @@
 # Claude Adapter — design-system
 
-> Тонкий адаптер для Claude. Универсальные правила экосистемы — в `docs/rules/core/*.md` (синкается из AI_OS).
-> Читай этот файл, `docs/rules/README.md` и `tasks/lessons.md` в начале каждого чата.
+> Тонкий адаптер для Claude. Универсальные правила экосистемы — в `AI_OS/docs/rules/core/*.md` (SSOT, копий в этом репо нет).
+> Читай этот файл и `tasks/lessons.md` в начале каждого чата.
 
 ---
 
@@ -24,20 +24,22 @@
 
 ## Каноны (rules как атомы)
 
-Универсальные правила — в `docs/rules/core/*.md` (SSOT в AI_OS, синкается автоматически). Читать нужное по имени:
+Универсальные правила — в `AI_OS/docs/rules/core/*.md` (SSOT, копий в этом репо нет). Если AI_OS не подключён к сессии — попросить подключить, по памяти не работать. Читать нужное по имени:
 
-- Начало / конец сессии — [`docs/rules/core/session-lifecycle.md`](docs/rules/core/session-lifecycle.md)
-- Стиль общения — [`docs/rules/core/communication-style.md`](docs/rules/core/communication-style.md)
-- Git flow, запрет флагов, правила редактирования — [`docs/rules/core/git-flow.md`](docs/rules/core/git-flow.md)
-- GitHub anti-abuse — [`docs/rules/core/github-anti-abuse.md`](docs/rules/core/github-anti-abuse.md)
-- Критерии SMALL / BIG — [`docs/rules/core/task-classification.md`](docs/rules/core/task-classification.md)
-- Принципы работы с кодом — [`docs/rules/core/code-principles.md`](docs/rules/core/code-principles.md)
-- Subagents (worktree, JSON-schema контракты, выбор модели) — [`docs/rules/core/subagents.md`](docs/rules/core/subagents.md)
-- Audit-триггер — [`docs/rules/core/audit-trigger.md`](docs/rules/core/audit-trigger.md)
+- Начало / конец сессии — [`AI_OS/docs/rules/core/session-lifecycle.md`](https://github.com/Arsid0305/AI_OS/blob/main/docs/rules/core/session-lifecycle.md)
+- Стиль общения — [`AI_OS/docs/rules/core/communication-style.md`](https://github.com/Arsid0305/AI_OS/blob/main/docs/rules/core/communication-style.md)
+- Git flow, запрет флагов, правила редактирования — [`AI_OS/docs/rules/core/git-flow.md`](https://github.com/Arsid0305/AI_OS/blob/main/docs/rules/core/git-flow.md)
+- GitHub anti-abuse — [`AI_OS/docs/rules/core/github-anti-abuse.md`](https://github.com/Arsid0305/AI_OS/blob/main/docs/rules/core/github-anti-abuse.md)
+- Критерии SMALL / BIG — [`AI_OS/docs/rules/core/task-classification.md`](https://github.com/Arsid0305/AI_OS/blob/main/docs/rules/core/task-classification.md)
+- Принципы работы с кодом — [`AI_OS/docs/rules/core/code-principles.md`](https://github.com/Arsid0305/AI_OS/blob/main/docs/rules/core/code-principles.md)
+- Subagents (worktree, JSON-schema контракты, выбор модели) — [`AI_OS/docs/rules/core/subagents.md`](https://github.com/Arsid0305/AI_OS/blob/main/docs/rules/core/subagents.md)
+- Audit-триггер — [`AI_OS/docs/rules/core/audit-trigger.md`](https://github.com/Arsid0305/AI_OS/blob/main/docs/rules/core/audit-trigger.md)
+- Разрешения веб-сессий — [`AI_OS/docs/rules/core/web-permissions.md`](https://github.com/Arsid0305/AI_OS/blob/main/docs/rules/core/web-permissions.md)
+- Независимость от поставщика ИИ — [`AI_OS/docs/rules/core/vendor-independence.md`](https://github.com/Arsid0305/AI_OS/blob/main/docs/rules/core/vendor-independence.md)
 
 **Специфика design-system** (scoped): [`docs/rules/scoped/design-system-specific.md`](docs/rules/scoped/design-system-specific.md) — review превью, CSS-токены, безопасность HTML, структура preview/.
 
-Архитектура rules и правила синка — [`docs/rules/README.md`](docs/rules/README.md).
+Архитектура rules — [`AI_OS/docs/rules/README.md`](https://github.com/Arsid0305/AI_OS/blob/main/docs/rules/README.md).
 
 ---
 
@@ -61,7 +63,7 @@ _Проверено: 2026-08-19._
 - Тип: дизайн-система, статические HTML-превью компонентов
 - Подключается к проектам как git submodule (`kino-design-system/` в Kino-app, аналогично в других)
 - Стек: HTML + CSS + JavaScript (без фреймворков, без Node.js)
-- CI/CD: нет. Автомержа нет (удалён 2026-09-25) — PR мержит владелица кнопкой, мерж через API запрещён (`docs/rules/core/github-anti-abuse.md`).
+- CI/CD: нет. Автомержа нет (удалён 2026-09-25) — PR мержит владелица кнопкой, мерж через API запрещён (`AI_OS/docs/rules/core/github-anti-abuse.md`).
 
 ## Среда Claude
 
@@ -70,7 +72,7 @@ _Проверено: 2026-08-19._
 
 ## Рабочий процесс
 
-Ветка `claude/...` → PR в `main` (не draft). Автомержа нет (удалён 2026-09-25) — PR мержит владелица кнопкой, мерж через API запрещён (`docs/rules/core/github-anti-abuse.md`). Никогда не пушить в `main` напрямую.
+Ветка `claude/...` → PR в `main` (не draft). Автомержа нет (удалён 2026-09-25) — PR мержит владелица кнопкой, мерж через API запрещён (`AI_OS/docs/rules/core/github-anti-abuse.md`). Никогда не пушить в `main` напрямую.
 
 ---
 
